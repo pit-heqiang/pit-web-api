@@ -39,23 +39,23 @@ function activate(context) {
 	context.subscriptions.push(disposable);
 }
 
-const handleFile = (data) => {
-	// 新建一个文件
-	var setting = vscode.Uri.parse("untitled:" + "./web-api.js");
-	vscode.workspace.openTextDocument(setting).then((text) => {
-		vscode.window.showTextDocument(text, 1, false).then(e => {
-			data.map((item, i) => {
-				console.log(item.url)
-				e.edit(edit => {
-					edit.insert(new vscode.Position(i, 0), item.url);
-				});
-			})
+// const handleFile = (data) => {
+// 	// 新建一个文件
+// 	var setting = vscode.Uri.parse("untitled:" + "./web-api.js");
+// 	vscode.workspace.openTextDocument(setting).then((text) => {
+// 		vscode.window.showTextDocument(text, 1, false).then(e => {
+// 			data.map((item, i) => {
+// 				console.log(item.url)
+// 				e.edit(edit => {
+// 					edit.insert(new vscode.Position(i, 0), item.url);
+// 				});
+// 			})
 
-		});
-	}, (error) => {
-		console.error(error);
-	});
-}
+// 		});
+// 	}, (error) => {
+// 		console.error(error);
+// 	});
+// }
 function deactivate() { }
 
 // 获取HTML模板
