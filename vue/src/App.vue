@@ -135,6 +135,10 @@ export default {
                 url: this.basicsForm.ip + this.form.requestUrl,
               }).then((res) => {
                 let obj = _.get(res, 'data.paths', []);
+                this.vscodeApi && this.vscodeApi.postMessage({
+                  command: 'tips',
+                  text: '获取树数据成功'
+                })
                 this.treeData = this.dataProcessing(obj);
               })
             }
