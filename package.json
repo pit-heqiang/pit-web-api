@@ -1,0 +1,67 @@
+{
+  "name": "pit-web-api",
+  "displayName": "pit-web-api",
+  "description": "pit-web-api",
+  "publisher": "heqiang",
+  "version": "1.0.0",
+  "repository": "pit-web-api",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:pit-web-api.webApi"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pit-web-api.webApi",
+        "title": "webApi"
+      }
+    ],
+    "configuration": [
+      {
+        "type": "object",
+        "title": "pit-web-api.webApiConfig configuration",
+        "properties": {
+          "pit-web-api.webApiConfig": {
+            "type": "object",
+            "default": {
+              "paths": [
+                {
+                  "ip": "",
+                  "requestUrl": ""
+                }
+              ],
+              "apiFuncName": ""
+            },
+            "description": "pit-web-api.webApiConfig configuration."
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.70.0",
+    "@vscode/test-electron": "^2.1.5",
+    "eslint": "^8.20.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "clipboard": "^2.0.11",
+    "loadsh": "^0.0.4"
+  }
+}
