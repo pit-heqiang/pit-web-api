@@ -215,8 +215,7 @@ export default {
         const repeatResult = repeatElement(repeatPath)
 
         const regex3 = /\{(.+?)\}/g
-        let str = 'import request from "@/utils/request";\n'
-        str += '\n'
+        let str = '';
         codeData.forEach(item => {
           let path = ''
           if (repeatResult[1] > 1) {
@@ -249,7 +248,7 @@ export default {
             const parameter = handleParameter(item.data.path)
             str += 'export const ' + apiName + ' = (' + parameter + ', data) => {\n'
           }
-          str += '  return request({\n'
+          str += '  return ' + this.form.apiFuncName + '({\n'
           str += '    url: `' + item.data.path.replaceAll('{', '${') + '`,\n'
           str += '    method: "' + item.data.method + '",\n'
           str += '    data\n'
