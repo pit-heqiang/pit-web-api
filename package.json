@@ -3,7 +3,7 @@
   "displayName": "pit-web-api",
   "description": "pit-web-api",
   "publisher": "heqiang",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": "pit-web-api",
   "engines": {
     "vscode": "^1.70.0"
